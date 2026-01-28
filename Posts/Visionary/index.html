@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Vision | IdeaVault</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        body {
+            background-color: #030712;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            padding-bottom: 5rem;
+        }
+
+        /* Glassmorphism Navigation */
+        .post-nav {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            padding: 0 5%;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--primary, #6366f1);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary, #6366f1);
+            transform: translateX(-5px);
+        }
+
+        /* Article Layout */
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .post-meta {
+            color: #64748b;
+            margin-bottom: 3rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Content Elements */
+        p { margin-bottom: 1.5rem; color: #cbd5e1; font-size: 1.1rem; }
+        
+        .three-container {
+            width: 100%;
+            height: 500px;
+            background: radial-gradient(circle at center, #1e293b 0%, #030712 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 3rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img.content-img {
+            width: 100%;
+            border-radius: 24px;
+            margin: 2rem 0;
+        }
+
+        /* Floating Glow Effect */
+        .glow-sphere {
+            position: fixed;
+            top: 20%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+          .split-row {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin: 4rem 0;
+    }
+
+    .split-row.reverse { flex-direction: row-reverse; }
+
+    .text-side { flex: 1.2; }
+    .image-side { flex: 0.8; }
+
+    .content-img-small {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .visual-label {
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--primary, #6366f1);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: -2.5rem;
+    }
+
+    .video-frame {
+        position: relative;
+        width: 100%;
+        background: #000;
+        border-radius: 15px;
+        overflow: hidden;
+        aspect-ratio: 16/9;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .video-frame video { width: 100%; height: 100%; object-fit: cover; }
+
+    .video-overlay {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(99, 102, 241, 0.8);
+        padding: 4px 12px;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+
+    .final-note {
+        margin-top: 5rem;
+        padding: 2rem;
+        background: rgba(99, 102, 241, 0.05);
+        border-left: 4px solid #6366f1;
+        font-style: italic;
+    }
+
+    /* Mobile Handling */
+    @media (max-width: 768px) {
+        .split-row, .split-row.reverse {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="glow-sphere"></div>
+
+    <nav class="post-nav">
+        <a href="../../index.html" class="back-btn">← Back to Vault</a>
+    </nav>
+
+    <article>
+    <header>
+        <div class="post-meta">Concept Phase // 2026</div>
+        <h1>The Visionary Node</h1>
+    </header>
+
+    <section class="content">
+        <div class="split-row">
+            <div class="text-side">
+                <p>I started this project in 2025 to evolve communication from 2D screens to 3D space. The "Visionary" isn't just a drone; it's a <strong>Holographic Telepresence Node</strong>.</p>
+                <p>My aim is to create a device that maintains a constant flight-path relative to the user. When a call is attended, the node deploys its sensor suite to begin 360° capture.</p>
+            </div>
+            <div class="image-side">
+                <img src="images/Vision_model.png" alt="Visionary Model" class="content-img-small">
+            </div>
+        </div>
+
+        <div class="visual-label">Digital Blueprint: Neural-Link Drone</div>
+        <div id="three-container" class="three-container"></div>
+
+        <div class="split-row reverse">
+            <div class="text-side">
+                <h3>Volumetric Transmission</h3>
+                <p>The device operates on a peer-to-peer mesh. Device A captures the user's volumetric data and streams it to Device B. Simultaneously, Device B projects the holographic character of the caller in real-time.</p>
+                <p>By utilizing <strong>Ultra-Low Latency (ULL)</strong> protocols, the "delay" is reduced to sub-millisecond levels, making the interaction feel as natural as standing in the same room.</p>
+            </div>
+            <div class="image-side">
+                <div class="video-frame">
+                    <div class="video-overlay">▶ System Simulation</div>
+                    <video src="video/t.mp4" poster="images/video-thumb.jpg" controls></video>
+                </div>
+            </div>
+        </div>
+
+        <p class="final-note">Final thoughts: This project is currently on hold.</p>
+    </section>
+</article>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const container = document.getElementById('three-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        const wireMatPrimary = new THREE.MeshBasicMaterial({ 
+            color: 0x6366f1, 
+            wireframe: true,
+            transparent: true,
+            opacity: 0.8
+        });
+
+        const wireMatAccent = new THREE.MeshBasicMaterial({ 
+            color: 0x06b6d4, 
+            wireframe: true,
+            transparent: true,
+            opacity: 1
+        });
+
+        const visionary = new THREE.Group();
+        scene.add(visionary);
+
+        const bodyGeo = new THREE.SphereGeometry(2, 20, 20); 
+        const body = new THREE.Mesh(bodyGeo, wireMatPrimary);
+        visionary.add(body);
+
+    
+        const propGroup = new THREE.Group();
+        propGroup.position.y = 2.2;
+        visionary.add(propGroup);
+
+        const bladeGeo = new THREE.BoxGeometry(4, 0.2, 0.6, 4, 1, 2); // Added segments for more wire-lines
+        const blade1 = new THREE.Mesh(bladeGeo, wireMatAccent);
+        const blade2 = new THREE.Mesh(bladeGeo, wireMatAccent);
+        blade2.rotation.y = Math.PI / 2;
+
+        propGroup.add(blade1, blade2);
+
+        const camGeo = new THREE.CylinderGeometry(0.6, 0.4, 1, 12, 4, true); 
+        const camBody = new THREE.Mesh(camGeo, wireMatPrimary);
+        camBody.position.y = -2.2;
+        visionary.add(camBody);
+
+        const lensGeo = new THREE.SphereGeometry(0.3, 16, 16);
+        const lensMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4 });
+        const lens = new THREE.Mesh(lensGeo, lensMat);
+        lens.position.y = -2.5;
+        visionary.add(lens);
+
+        camera.position.z = 8;
+        camera.position.y = 1;
+
+        function animate() {
+            requestAnimationFrame(animate);
+        
+            propGroup.rotation.y += 0.25;
+
+            const time = Date.now() * 0.001;
+            visionary.position.y = Math.sin(time * 1.5) * 0.3;
+            visionary.rotation.y += 0.005;
+            visionary.rotation.z = Math.sin(time) * 0.05; // Slight tilt while hovering
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        animate();
+    </script>
+</body>
+</html>

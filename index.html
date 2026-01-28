@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Idea Hub</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.5);
+            --accent: #06b6d4;
+            --dark-bg: #030712;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-light: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glow Backgrounds */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -10%; left: -10%;
+            width: 40%; height: 40%;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { 
+            color: var(--text-light); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            opacity: 0.8; 
+            transition: 0.3s;
+        }
+        .nav-links a:hover { opacity: 1; color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 8%;
+            gap: 4rem;
+            text-align: left;
+        }
+
+        .hero-content { flex: 1; min-width: 300px; }
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(white, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 3D Power Core Visual */
+        .hero-visual {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .core {
+            width: 100px;
+            height: 100px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 60px var(--primary);
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        .ring {
+            position: absolute;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            animation: orbit linear infinite;
+        }
+
+        .ring-1 { width: 200px; height: 200px; animation-duration: 10s; border-style: dashed; }
+        .ring-2 { width: 280px; height: 280px; animation-duration: 15s; opacity: 0.5; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.1); filter: brightness(1.5); }
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Cards Section */
+        .main-content { padding: 4rem 8%; }
+        .section-title { margin-bottom: 3rem; font-size: 2rem; }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(99, 102, 241, 0.2);
+        }
+
+        .card img { width: 100%; height: 220px; object-fit: cover; transition: 0.5s; }
+        .card:hover img { transform: scale(1.05); }
+
+        .card-body { padding: 1.5rem; }
+        .card-body h3 { margin-bottom: 0.8rem; color: #fff; }
+        .card-body p { color: #94a3b8; font-size: 0.95rem; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 5%; }
+            .hero { text-align: center; padding-top: 4rem; }
+            .hero-content { order: 2; }
+            .hero-visual { order: 1; width: 200px; height: 200px; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MyIdeaHub</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#posts">Ideas</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Igniting <br><span style="color: var(--primary)">Digital Concepts</span></h1>
+            <p>Archiving the blueprints of the future. Explore my graveyard of ideas, ready for your resurrection.</p>
+        </div>
+        <div class="hero-visual">
+            <div class="core"></div>
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+        </div>
+    </section>
+
+    <section id="posts" class="main-content">
+        <h2 class="section-title">Latest Brainstorms</h2>
+        <div id="post-grid" class="post-grid">
+            </div>
+    </section>
+
+    <section id="about" style="text-align: center; padding: 6rem 8%; background: rgba(255,255,255,0.02);">
+        <h2 style="margin-bottom: 2rem;">The Visionary</h2>
+        <div style="max-width: 700px; margin: 0 auto; color: #94a3b8;">
+            <p>Commonly known as <b>VISION</b>, I am the creator and lead thinker behind MyIdeaHub.</p>
+            <br>
+            <p>I am a former Game Developer now navigating the Android ecosystem. This hub exists because some ideas are too big for one person—I'm releasing them so the world can build what I couldn't finish.</p>
+        </div>
+    </section>
+
+    <footer style="padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #475569;">
+        <p>&copy; 2026 MyIdeaHub • Inventor SPORIME</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
