@@ -11,12 +11,12 @@ This repository serves as a living archive for my intellectual curiosity. You’
 **Technical Logs:** Deep dives into specific technologies I'm mastering.
 
 ## 🧠 Why I'm Doing This
-I believe that ideas are cheap, but **execution is everything.**s By publicizing my process, I’m holding myself accountable to build more and think deeper.
+I believe that ideas are cheap, but **execution is everything.**By publicizing my process, I’m holding myself accountable to build more and think deeper.
 
 Feel free to browse, open an issue if you want to collaborate, or just "Star" the repo if you find an idea worth stealing (just give me a shoutout!).
 
 ## 📫 Get in Touch
 
-**YouTube:** @SPORIMEstudio
+**YouTube:** [@SPORIMEstudio](https://www.youtube.com/@SPORIMEstudio)
 
 **Github:** [SPORIMEstudio](https://github.com/SPORIMEstudio/)
