@@ -3,7 +3,7 @@ const posts = [
     {
         title: "The Visionary Node",
         description: "A Holographic Telepresence Node",
-        image: "Posts/Visionary/images/post_thumb.png",
+        image: "/Posts/Visionary/images/post_thumb.png",
         link: "Posts/Visionary/index.html"
     }
 ];
