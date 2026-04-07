@@ -1,35 +1,45 @@
-const posts = [
-    {
-        title: "The Visionary Node",
-        description: "A Holographic Telepresence Node",
-        image: "Posts/Visionary/images/post_thumb.png",
-        link: "Posts/Visionary/index.html"
-    }];
-function displayPosts() {
-    const postGrid = document.getElementById('post-grid');
-    if (!postGrid) return;
-    postGrid.textContent = '';
-    posts.forEach(post => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.onclick = () => {
-            const target = new URL(post.link, window.location.origin);
-            window.location.href = target.href;
-        };
-        const img = document.createElement('img');
-        img.src = post.image; 
-        img.alt = post.title;
-        const cardBody = document.createElement('div');
-        cardBody.className = 'card-body';
-        const h3 = document.createElement('h3');
-        h3.textContent = post.title; 
-        const p = document.createElement('p');
-        p.textContent = post.description; 
-        cardBody.appendChild(h3);
-        cardBody.appendChild(p);
-        card.appendChild(img);
-        card.appendChild(cardBody); 
-        postGrid.appendChild(card);
-    });
-}
-document.addEventListener('DOMContentLoaded', displayPosts);
+(function(_0x5a1f, _0x2b3c) {
+    const _0x4d2e = {
+        'a': 'VGl0bGU=',
+        'b': 'ZGVzY3JpcHRpb24=',
+        'c': 'aW1hZ2U=',
+        'd': 'bGluaw=='};
+    const _0x1122 = [
+        {
+            [_0x1122_dec(_0x4d2e.a)]: "\x54\x68\x65\x20\x56\x69\x73\x69\x6f\x6e\x61\x72\x79\x20\x4e\x6f\x64\x65",
+            [_0x1122_dec(_0x4d2e.b)]: "\x41\x20\x48\x6f\x6c\x6f\x67\x72\x61\x70\x68\x69\x63\x20\x54\x65\x6c\x65\x70\x72\x65\x73\x65\x6e\x63\x65\x20\x4e\x6f\x64\x65",
+            [_0x1122_dec(_0x4d2e.c)]: "\x50\x6f\x73\x74\x73\x2f\x56\x69\x73\x69\x6f\x6e\x61\x72\x79\x2f\x69\x6d\x61\x67\x65\x73\x2f\x70\x6f\x73\x74\x5f\x74\x68\x75\x6d\x62\x2e\x70\x6e\x67",
+            [_0x1122_dec(_0x4d2e.d)]: "\x50\x6f\x73\x74\x73\x2f\x56\x69\x73\x69\x6f\x6e\x61\x72\x79\x2f\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c"
+        }
+    ];
+
+    function _0x1122_dec(_0x33) { return atob(_0x33).toLowerCase(); }
+
+    function _0x99a1() {
+        const _0xfe32 = document["\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64"]('\x70\x6f\x73\x74\x2d\x67\x72\x69\x64');
+        if (!_0xfe32) return;
+        _0xfe32['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74'] = '';
+
+        _0x1122['\x66\x6f\x72\x45\x61\x63\x68'](_0x7788 => {
+            const _0xbc21 = document['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']('\x64\x69\x76');
+            _0xbc21['\x63\x6c\x61\x73\x73\x4e\x61\x6d\x65'] = '\x63\x61\x72\x64';
+            
+            _0xbc21['\x6f\x6e\x63\x6c\x69\x63\x6b'] = () => {
+                window['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66'] = _0x7788['link'];
+            };
+
+            const _0ximg = document['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']('\x69\x6d\x67');
+            _0ximg['\x73\x72\x63'] = _0x7788['image'];
+
+            const _0xbody = document['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']('\x64\x69\x76');
+            _0xbody['\x63\x6c\x61\x73\x73\x4e\x61\x6d\x65'] = '\x63\x61\x72\x64\x2d\x62\x6f\x64\x79';
+
+            const _0xh3 = document['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']('\x68\x33');
+            _0xh3['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74'] = _0x7788['title'];
+
+            _0xbody['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0xh3);
+            _0xbc21['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0ximg);
+            _0xbc21['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0xbody);
+            _0xfe32['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](_0xbc21);
+        });}document['\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72']('\x44\x4f\x4d\x43\x6f\x6e\x74\x65\x6e\x74\x4c\x6f\x61\x64\x65\x64', _0x99a1);
+})();
